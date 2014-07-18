@@ -16,7 +16,11 @@ body {
  	width: 48%;
  	margin: auto;
  	padding: 10px;
- 	border: 1px dotted #663399;
+ 	border: 2px dotted #ffffff;
  	background: url(https://raw.githubusercontent.com/MissAndry/MissAndry.github.io/master/unit1_projects/images/Galaxy.jpg);
- }
+}
 
+.faded {
+	opacity: 0.75;
+	color: white;
+}
