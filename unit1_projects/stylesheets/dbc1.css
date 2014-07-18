@@ -1,0 +1,23 @@
+body { 
+	background-color: #ccccff;
+	font-family: Helvetica, sans-serif;
+	color: #404040;
+	text-align: justify;
+ }
+
+ h1, h2, h3, h4, h5, h6 { color: #000000; text-align: center; }
+ h1, h2, h3, h4 { text-transform: uppercase; }
+
+ a:link{ color: #CC0033; }
+ a:visited{ color: #660033; }
+ a:hover{ color: #0099cc; }
+ 
+ #container {
+ 	width: 48%;
+ 	margin: auto;
+ 	padding: 10px;
+ 	border: 1px dotted #663399;
+ 	background: url(/Users/mgaebz/DBc/MissAndry.github.io/unit1_projects/images/Galaxy.jpg);
+ }
+
+ 
