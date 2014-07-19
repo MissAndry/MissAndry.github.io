@@ -1,0 +1,55 @@
+body {
+	background-color: #663300;
+	font-family: Helvetica, sans-serif;
+	color: #000000;
+	text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6 { text-align: center }
+
+p { 
+	text-align: justify; 
+	margin: 15px;
+}
+
+li { padding: 5px; }
+
+img { padding: 15px; }
+
+#head_container {
+	 background: url(../images/Thorntonstoffee.jpg); 
+	 height: 250px; 
+	 width: 100%; 
+	 margin: 0;
+	 border: 0 0 5px 0 solid #cc9966;
+}
+
+#menu {
+	width: 200px; 
+	height: 1275px; 
+	background-color: #996600; 
+	float:left; 
+	color: #ffffff;
+	border-style: solid;
+	border-color: #cc9966;
+}
+
+#content {
+	float: right;
+	width: 75%;
+	background-color: #e0e0e0;
+	border-radius: 25px;
+	padding: 4px;
+	margin: 20px 50px 0 0;
+	border: 3px dotted #cc9933;
+}
+
+#footer {
+	clear: both;
+	text-align: center;
+}
+
+a:link{ color: #cc0066; }
+a:visited{ color: #cc6633; }
+a:hover{ color:#339999; }
+
