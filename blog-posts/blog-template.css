@@ -1,0 +1,67 @@
+body {
+	font-family: Helvetica, sans-serif;
+	background: url(../unit1_projects/images/Galaxy.jpg);
+	color: #202020;
+	text-align: justify;
+}
+
+p.date { padding: 15px; text-align: right; }
+
+p.main { padding: 15px; text-align: justify; }
+
+h2 { padding: 15px 0 0 15px; text-transform: capitalize; text-align: left; }
+h3 { text-decoration: underline; text-align: center; }
+
+img { 
+	width: 100%;
+}
+
+a:link{ color: #cc0066; }
+a:visited{ color: #ff9933; }
+a:hover{ color: #66ccff; }
+
+#header {
+	width: 100%;
+	height: 100px;
+	background-color: #202020;
+	margin: 0 0 15px 0;
+	text-align: center;
+	opacity: 0.90;
+	border-bottom: 2px solid #330066;
+	color: #e8e8e8;
+}
+
+#menu {
+	float: right;
+	width: 14%;
+	background-color: #202020;
+	border-radius: 20px;
+	opacity: 0.90;
+	border: 2px solid #330066;
+	color: #e8e8e8;
+	margin-right: 8%;
+	
+}
+
+#content {
+	width: 66%;
+	margin-left: 8%;
+	background-color: #f0f0f0;
+	border: 4px solid #ffffcc;
+}
+
+#footer {
+	clear: both;
+	text-align: center;
+	padding: 20px;
+	color: #505050;
+}
+
+.post_title { 
+	text-align: right; 
+	text-transform: bold;
+}
+
+.blue {
+	color: #6699cc;
+}
