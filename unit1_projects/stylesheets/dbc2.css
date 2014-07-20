@@ -49,6 +49,8 @@ img { padding: 15px; }
 	text-align: center;
 }
 
+.colorfy { color: #990066; }
+
 a:link{ color: #cc0066; }
 a:visited{ color: #cc6633; }
 a:hover{ color:#339999; }
