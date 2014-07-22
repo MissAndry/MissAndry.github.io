@@ -10,12 +10,19 @@ p.date { padding: 15px; text-align: right; }
 
 p.main { padding: 15px; text-align: justify; }
 
+h1 {
+	font-size:40px; 
+	margin-bottom: 30px; 
+}
+
 h2 { padding: 15px 0 0 15px; text-transform: capitalize; text-align: left; }
 h3 { text-decoration: underline; text-align: center; }
 
 img { 
 	width: 100%;
 }
+
+li { list-style-type: none; }
 
 a:link{ color: #cc0066; }
 a:visited{ color: #BD49FF; }
