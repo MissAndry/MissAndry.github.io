@@ -1,0 +1,43 @@
+header { 
+    background-color: #339999; 
+    margin: 0;
+	width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+h1 { 
+    font-family: 'Lobster', sans-serif;
+    text-align: center; 
+    color: #fff;
+}
+      
+h2 {
+	font-family: 'Chewy', serif;
+}
+
+body { width: 99%; }
+
+img { 
+	display: block;
+	margin: 5px auto;	
+}
+      
+section { 
+	margin: 100px auto;
+	width: 90%;
+	border: 5px solid #339999;
+	border-radius: 25px;
+	padding: 15px;
+}
+      
+article {
+	width: 80%;
+	margin: 0 auto;
+	border-bottom: 2px dashed #336699;
+	padding: 5px;
+}
+
+p {  font-family: 'Roboto Slab', serif; }
+
+footer { text-align: center; }
