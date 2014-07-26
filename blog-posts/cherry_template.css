@@ -1,0 +1,146 @@
+body {
+	width: 100%;
+	background-color: #d1d8d4;
+	font-family: 'Roboto Slab', serif;
+	margin: 0;
+}
+
+h1 {
+	font-family: 'Lobster', sans-serif;
+	text-align: center;
+	color: #fefaff;
+	background-color: #339999;
+	padding: .5em;
+
+}
+
+a {
+	color: #fefaff;
+	text-decoration: none;
+}
+
+a:visited {	color: #fefaff;}
+a:hover {color: #ffcc66;}
+header {
+	width: 100%;
+	background-color: #339999;
+	top: 0;
+	left: 0;
+	position: fixed;
+}
+
+header h1 {
+	text-align: left;
+	text-indent: 14.5%;
+	font-size: 3.4em;
+	margin-bottom: 0;
+	background: #339999;
+	padding: 0;
+}
+
+header nav {
+	float: right;
+	margin-right: 14.5%;
+	color: #fefaff;
+	padding: 0;
+}
+header nav ul{
+	list-style-type: none;
+	padding: .5em;
+	margin: 0;
+}
+header nav li {
+	display: inline-block;
+	padding: 0 1em;
+}
+
+footer {
+	background-color: #339999;
+	clear: both;
+	width: 100%;
+	text-align: center;
+	color: #fefaff;
+}
+
+#wrapper {
+	width: 75%;
+	margin: 133px auto;
+	background: #fbfafc;
+}
+
+.blogs {
+	background: #a8d707;
+	float: left;
+	max-height: 350px;
+	width: 40%;
+	margin: 3%;
+	padding: 2%;
+}
+
+article.blogs img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin: 1em auto;
+}
+
+
+p {
+	padding: 1em;
+	margin: 0 2%;
+	display: block;
+}
+
+#projects {
+	background: #a8d707;
+	float: left;
+	max-height: 250px;
+	width: 27.33%;
+	margin: 1%;
+	padding: 2%;
+
+}
+
+#projects img {
+	width: 100%;
+	display: block;
+	margin: 1em auto;
+}
+
+article.projects img:hover {
+	background-image: #000;
+}
+
+
+@media screen and (max-width: 600px) {
+
+	#wrapper {
+		width: 420px;
+	}
+	#projects {
+		background: #a8d707;
+		max-height: 250px;
+		width: 88%;
+		margin: 3% 4%;
+	}
+
+	#projects img { 
+		display: block;
+		width: 100%;
+		height: 30px;
+		margin: 5px auto;
+	}
+
+	header h1 {text-align: center; text-indent: 0;}
+	header nav ul { margin: 0 auto;}
+	header nav {float: none; text-align: center; margin: 0 auto; }
+
+}
+
+@media screen and (max-width: 450px){
+	header {width: 450px;}
+}
+@media screen and (min-width: 1200px){
+	#wrapper { width: 900px; }
+
+}
