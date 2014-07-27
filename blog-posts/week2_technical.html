@@ -1,0 +1,41 @@
+!DOCTYPE html>
+<html>
+<head>
+	<title>MissAndry</title>
+	<link rel="stylesheet" type="text/css" href="cherry_template.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lobster' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<header>
+		<h1>// MissAndry //</h1>
+	
+		<nav>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="week1_technical.html">Favored Websites</a></li>
+				<li><a href="week1_cultural.html">Kitchenette</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div id="wrapper">
+		<h2>Class vs. ID - What's the Difference?</h2>
+		<hr />
+		<p>
+			The difference between classes and IDs can seem utterly arbitrary when dealing primarily with CSS. Either one references a specific style (written in a stylesheet) that can be added to HTML tags as attributes. However, there are pretty important differences!
+		</p>
+		<p>
+			Basically, a class is something you are going to use <span class="greenboldtext">over and over again</span> and an ID is something you are only going to use <span class="greenboldtext">once</span>. In other words, you give a tag a specific ID when you want to single it out and a class when you want to create faceless masses. 
+		</p>
+		<img src="../unit1_projects/images/html-class-vs-id-use.png" />
+		<p>
+			We can think of classes like an apartment layout and IDs like an apartment number. The same layout for apartments is likely to be used over and over again, but apartment numbers have to be unique. You wouldn't, for example, be able to find a single apartment by searching through layouts, but a number makes it a lot more simple. Other things that are unique to each apartment or apartment building would have an ID number without necessarily having a class.   
+		</p>
+		<p>
+			This differentiation between class and ID becomes especially important in JavaScript. JavaScript only likes to look things up by apartment number (the ID), and it doesn't know what to do with non-unique identifiers. Fortunately, it'll ignore classes altogether - so you can reuse one class all you want!
+		</p>
+		<p class="date">7.26.2014</p>
+	</div>
+
+	<footer>&copy; MissAndry</footer>
+</body>
+</html>
