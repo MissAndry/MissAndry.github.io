@@ -25,9 +25,13 @@ a {
 	color: #fefaff;
 	text-decoration: none;
 }
-
 a:visited {	color: #fefaff;}
 a:hover {color: #ffcc66;}
+
+p a { color: #339999; }
+
+p a:visited { color: #339999; }
+p a:hover { color: #ffcc66; }
 
 img { 
 	display: block;
