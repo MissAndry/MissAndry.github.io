@@ -21,17 +21,21 @@ h2, h3 {
 	margin-bottom: 0;
 }
 
-a {
+nav ul a {
 	color: #fefaff;
 	text-decoration: none;
 }
-a:visited {	color: #fefaff;}
-a:hover {color: #ffcc66;}
+nav ul a:visited {	color: #fefaff;}
+nav ul a:hover {color: #ffcc66;}
 
-p a { color: #339999; }
-
+p a { color: #339999; text-decoration: none; }
 p a:visited { color: #339999; }
 p a:hover { color: #ffcc66; }
+
+ul a {color: #339999; text-decoration: none; }
+ul a:visited {color: #339999;}
+ul a:hover {color: #ffcc66;}
+
 
 img { 
 	display: block;
