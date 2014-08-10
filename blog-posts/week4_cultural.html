@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MissAndry</title>
+	<link rel="stylesheet" type="text/css" href="cherry_template.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lobster' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<header>
+		<h1>// MissAndry //</h1>
+	
+		<nav>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="week4_technical.html">Technical Blog</a></li>
+				<li><a href="week4_cultural.html">Cultural Blog</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div id="wrapper">
+		<img src="../unit1_projects/images/heartbleed.png" alt="Heartbleed Logo">
+		<h2>Bleeding Hearts</h2>
+		<hr />
+		<p>
+			Information security is on my friend's minds these days. With each mobile update to Facebook comes an onslaught of negative 
+			opinions about Facebook (usually posted on Facebook). There have been speculations that Facebook will use its permissions 
+			for an unknown, faceless, menacing, nefarious purpose - maybe your information will be sold to data miners; maybe Facebook 
+			and the NSA will team up to spy on you through your phone; maybe all your pictures will be seized for the Secret Database of 
+			Visual Evidence. While most of these misdeeds are wild speculation, they also all hinge on the idea that the only Facebook 
+			corporation has access to the encrypted IDs of your user details. Passwords, user names, emails, message content, status 
+			updates, and pictures are all presumed to be safe from hackers' clutches. 
+		</p>
+		<p> 
+			This trust in Facebook's server security is reflected in any other complaints about Big Data - the assumption is that any site recieving user information, will keep that information safe. (The complaints come when users don't trust corporations  to ethically use user information and/or mobile app permissions.) This isn't unreasonable, and most websites utilize encryption software to protect user information from outside parties. But we have to wonder: what happens when that software is faulty?
+		</p>
+		<p>
+			When you type a web address into your browser window, your broswer sends a request to that website's server. The server 
+			recieves the request, processes it, and returns the site information to your browser, which in turn displays the site on 
+			your screen. More complex iterations of this include user information such as passwords, payment information, and content 
+			(status updates, blog posts, etc.). When those more complex iterations are in play, servers encrypt the user input and 
+			server requests for security. Encryption promises that user information won't be accessible to any third parties. Most 
+			websites use a third-party software for this purpose.
+		</p>
+		<p>
+			Recently, <a href="http://heartbleed.com">the Heartbleed bug</a> was revealed in the popular <a href="http://en.wikipedia.org/wiki/Openssl">OpenSSL</a> 
+			encryption software. Heartbleed allowed an outside party to view and infiltrate requests to servers using the vulnerable 
+			encryption software. The problem wasn't with the requests themselves, but the stored memory of server requests. Essentially, 
+			Heartbleed could allow someone to retrieve too much information about past server requests, giving anyone access to private
+			user information. This serious bug has since been fixed, but was active for two years, and perfectly exemplifies an issue of 
+			server security - namely, that encryption software is created by humans. 
+		</p>
+		<p>
+			Heartbleed was created and allowed to slip through undetected because of basic human error. All other security bugs are created the same way. Any server requests can be avenues to further infiltration. The two ways I can think to combat this are to minimize server requests and to have lots of other people look at and test your code. With fewer server requests, fewer sensitive information might be stored in the server's memory (maybe; I don't know exactly how servers work). Many people looking at and testing your code would lend many sets of eyes to watch for potential bugs. 
+		</p>
+		<p class="date">8.9.2014</p>
+	</div>
+
+	<footer>&copy; MissAndry</footer>
+</body>
+</html>
