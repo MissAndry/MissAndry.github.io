@@ -154,7 +154,7 @@ section:after {
 }
 #center-wrapper ul { list-style-type: none; }
 #center-wrapper ul a { color: #000; }
-#center-wrapper ul a:hover { color: #00cc99; }
+#center-wrapper ul a:hover { color: #cc6666; }
 
 /* Specific blog image */
 .blogs {
