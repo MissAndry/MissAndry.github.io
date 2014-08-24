@@ -1,6 +1,6 @@
 body {
 	width: 100%;
-	background-color: #d1d8d4;
+	background-color: #eeecea;
 	font-family: 'Roboto Slab', serif;
 	margin: 0;
 	text-align: left;
@@ -12,7 +12,7 @@ nav ul li a {
 	text-decoration: none;
 }
 nav ul li a:visited { color: #000; }
-nav ul li a:hover { color: #00bbcc; }
+nav ul li a:hover { color: #b82868; }
 
 /* Header style */
 header {
@@ -43,7 +43,7 @@ header nav {
 	color: #000;
 	padding: 0;
 	background-color: rgba(200, 200, 200, 0.35);
-	text-shadow: 0 0 0.15em #838b8b, 0 0 0.1em #0c0c0c;
+	text-shadow: 0 0 0.18em #737b7b, 0 0 0.15em #0c0c0c;
 	border-radius: 20px;
 }
 
@@ -103,16 +103,23 @@ p em {
 	font-weight: 500;
 }
 
+blockquote {
+	background: rgba(200, 190, 170, 0.15);
+	padding: 1em;
+	text-align: justify;
+	border-left: #ac5c9c 2px dotted;
+}
+
 /* Specific links */
 a {text-decoration: none;}
-p a { color: #339999;}
-p a:visited { color: #339999; text-decoration: none; }
-p a:hover { color: #00bbcc; }
+p a, blockquote a { color: #cc3366;}
+p a:visited, blockquote a:visited { color: #cc3366; text-decoration: none; }
+p a:hover, blockquote a:hover { color: #ee8800; }
 
 
-ul a {color: #339999; text-decoration: none; }
-ul a:visited {color: #339999;}
-ul a:hover {color: #00bbcc;}
+ul a {color: #cc3366; text-decoration: none; }
+ul a:visited {color: #cc3366;}
+ul a:hover {color: #ee8800;}
 ul img {max-width: 103px}
 
 /* More basic settings */
