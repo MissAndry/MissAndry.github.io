@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MissAndry</title>
+	<link rel="stylesheet" type="text/css" href="cherry_template.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lobster' rel='stylesheet' type='text/css'>
+	<base target="_blank">
+</head>
+<body>
+	<header>
+		<h1>tech</h1>
+	
+		<nav>
+			<ul>
+				<li><a href="http://missandry.github.io" target="_self">home</a></li>
+				<li><a href="http://missandry.github.io/blog-posts/tech-archive.html" target="_self">tech blog</li>
+				<li><a href="http://missandry.github.io/blog-posts/culture-archive.html" target="_self">culture blog</li>
+				<li><a href="http://missandry.github.io/projects.html" target="_self">projects</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div id="wrapper">
+		
+		<h2>Classes vs. Modules</h2>
+		<hr />
+		<p>
+			By now, we're familiar with classes as a set of behaviors contained within an object. A new object can be created as an instance of the class, and that object will be able to find and execute the behaviors defined by the class. Classes have a handy feature called <strong class="greenboldtext">inheritance</strong> - that is, a class can <i>inherit</i> methods from another class (which then becomes that class' <a href="what is a superclass">superclass</a>). Any object which is in a sub-class of another object has all the properties of the parent object. For instance, in Ruby, everything is a sub-class of <a href="tf is object">Object</a>, which itself is a sub-class of <a href="basic object what the hell">BasicObject</a>.
+		</p>
+		<p>
+			While there can be a long chain of inheritance (e.g. <code>Array</code> <em>inherits</em> properties from <code>Object</code> which has <em>inherited</em> properties from <code>BasicObject</code>), no one class can inherit from more than one class. 
+			<blockquote>
+				<code>
+					<b>class</b> Sample < Array < String &nbsp;&nbsp;# <i>the '<' stands for 'inherits from'</i><br>
+					&nbsp;&nbsp;<b>def</b> working<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "This is working"<br>
+					&nbsp;&nbsp;end<br>
+					end<br>
+					<br>
+					please_work = <b>Sample</b>.new<br>
+					<b>=> TypeError: superclass must be a Class (NilClass given)</b>
+				</code>
+			</blockquote>
+		<p>
+			As you can see, it's not possible to make a class that has all the properties of arrays and strings using inheritance. Luckily there's a great workaround: <strong class="greenboldtext">Modules</strong>.
+		</p>
+		<p>
+			Modules do a similar thing to inheritance - they define behaviors that can be accessed by any class which includes the module. The advantage is that one class can mix-in as many modules as it wants.
+		</p>
+		<p>
+			I haven't much used modules before, but I like that they cut down on extraneous code and can help keep classes DRY. For instance, if you have a "superhero" class and a "villain" class, you'd probably want both of them to be able to fight. You could write "punch" and "kick" methods for each:
+		</p>
+			<blockquote>
+				<code>
+					<b>class</b> Superhero<br>
+					&nbsp;&nbsp;<b>def</b> punch<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "Pow! Whatta right hook!"<br>
+					&nbsp;&nbsp;end<br>
+					<br>
+					&nbsp;&nbsp;<b>def</b> kick<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "You're no match for my mighty feet!"<br>
+					&nbsp;&nbsp;end<br>
+					<br>
+					&nbsp;&nbsp;<b>def</b> taunt &nbsp;&nbsp;# <i>for flavor</i><br> 
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "You'll never get away with this, villain!"<br>
+					&nbsp;&nbsp;end<br>
+				  end<br>
+					<br>
+					<b>class</b> Villain<br>
+					&nbsp;&nbsp;<b>def</b> punch<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "Pow! Whatta right hook!"<br>
+					&nbsp;&nbsp;end<br>
+						<br>
+					&nbsp;&nbsp;<b>def</b> kick<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "You're no match for my mighty feet!"<br>
+					&nbsp;&nbsp;end<br><br>
+					&nbsp;&nbsp;<b>def</b> taunt<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "You'll never stop me!"<br>
+					&nbsp;&nbsp;end<br>
+					end<br>
+					<br>
+					kamala_khan = <b>Superhero</b>.new<br>
+					the_inventor = <b>Villain</b>.new<br>
+					<br>
+					kamala_khan.punch<br>
+					#<i> => "Pow! Whatta right hook!"</i><br>
+					the_inventor.punch<br>
+					#<i> => "Pow! Whatta right hook!"</i><br>
+					<br>
+					kamala_khan.kick<br>
+					# <i>=> "You're no match for my mighty feet!"</i><br>
+					the_inventor.kick<br>
+					# <i>=> "You're no match for my mighty feet!"</i><br>
+					<br>
+					kamala_khan.taunt<br>
+					# <i>=> "You'll never get away with this, villain!"</i><br>
+					the_inventor.taunt<br>
+					# <i>=> "You'll never stop me!"</i>
+				</code>
+			</blockquote>
+		<p>
+			The only problem is that doesn't look very DRY. Even though they're in different classes, we don't really want to add repeat methods across classes. It makes it harder to immediately see the differences in functionality and just looks messy. Thanks to inheritance, both punch and kick can be defined in a separate class. Then, the superhero and the villain can inherit their fight tactics before the rest of their methods are defined, cleaning up the code:
+		</p>
+			<blockquote>
+				<code>
+					<b>class</b> FightTactics<br>
+					&nbsp;&nbsp;<b>def</b> punch<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "Pow! Whatta right hook!"<br>
+					&nbsp;&nbsp;end<br>
+						<br>
+					&nbsp;&nbsp;<b>def</b> kick<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "You're no match for my mighty feet!"<br>
+					&nbsp;&nbsp;end<br>
+					end<br>
+					<br>
+					<b>class</b> Superhero < FightTactics<br>
+					&nbsp;&nbsp;<b>def</b> taunt<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "You'll never get away with this, villain!"<br>
+					&nbsp;&nbsp;end<br>
+					end<br>
+					<br>
+					<b>class</b> Villain < FightTactics<br>
+					&nbsp;&nbsp;<b>def</b> taunt<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "You'll never stop me!"<br>
+					&nbsp;&nbsp;end<br>
+					end
+				</code>
+			</blockquote>
+		<p>
+			With inheritance, the superhero and villan classes have the same functionality as before, even though the punch and kick methods aren't defined explicitly in those classes. 
+		</p>
+			<blockquote>
+				<code>
+					kamala_khan.punch<br>
+					# <i>=> "Pow! Whatta right hook!"</i><br>
+					the_inventor.punch<br>
+					# <i>=> "Pow! Whatta right hook!"</i><br>
+					<br>
+					kamala_khan.kick<br>
+					# <i>=> "You're no match for my mighty feet!"</i><br>
+					the_inventor.kick<br>
+					# <i>=> "You're no match for my mighty feet!"</i><br>
+					<br>
+					kamala_khan.taunt<br>
+					# <i>=> "You'll never get away with this, villain!"</i><br>
+					the_inventor.taunt<br>
+					# <i>=> "You'll never stop me!"</i>
+				</code>
+			</blockquote>
+		<p>
+			I only have one problem with this code. Since it's defined as a class, FightTactics is available for instance creation, even though I don't want to use FightTactics as its own instance. The <a href="http://matt.aimonetti.net/posts/2012/07/30/ruby-class-module-mixins/"> cardinal rule of classes</a> - "a class is a construct used to create instances of itself" - is broken. To define FightTactics in a way more in line with how we're going to use it, we should make it a module, then include that module in the superhero and the villain class:
+		</p>
+			<blockquote>
+				<code>
+					<b><i>module</i> FightTactics</b><br>
+					&nbsp;&nbsp;<b>def</b> punch<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "Pow! Whatta right hook!"<br>
+					&nbsp;&nbsp;end<br>
+					<br>
+					&nbsp;&nbsp;<b>def</b> kick<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "You're no match for my mighty feet!"<br>
+					&nbsp;&nbsp;end<br>
+					end<br>
+					<br>
+					<b>class</b> Superhero <br>
+					&nbsp;&nbsp;<b><i>include</i> FightTactics</b><br>
+					&nbsp;&nbsp;<b>def</b> taunt<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "You'll never get away with this, villain!"<br>
+					&nbsp;&nbsp;end<br>
+					end<br>
+					<br>
+					<b>class</b> Villain <br>
+					&nbsp;&nbsp;<b><i>include</i> FightTactics</b><br>
+					&nbsp;&nbsp;def taunt<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;puts "You'll never stop me!"<br>
+					&nbsp;&nbsp;end<br>
+					end
+				</code>
+			</blockquote>
+		<p>
+			Now, the only thing left to do is test the code:
+		</p>
+			<blockquote>
+				<code>
+					kamala_khan.punch<br>
+					# <i>=> "Pow! Whatta right hook!"</i><br>
+					the_inventor.punch<br>
+					# <i>=> "Pow! Whatta right hook!"</i><br>
+					<br>
+					kamala_khan.kick<br>
+					# <i>=> "You're no match for my mighty feet!"</i><br>
+					the_inventor.kick<br>
+					# <i>=> "You're no match for my mighty feet!"</i><br>
+					<br>
+					kamala_khan.taunt<br>
+					# <i>=> "You'll never get away with this, villain!"</i><br>
+					the_inventor.taunt<br>
+					# <i>=> "You'll never stop me!"</i>
+				</code>
+			</blockquote>
+		<p>
+			Success! The punch and kick instance methods weren't defined in any class, but because both of those classes include the FightTactics module (where the methods are defined) Ruby is able to find and execute those methods when they are called by the instances of the class.
+		</p>
+    <p>
+      "Mixing" more than one module in a class is something modules are perfectly suited for. "Mix-ins" solve the problem of multiple inheritance - it's not technically inheritance, so it's not technically breaking any of Ruby's rules. With mixed-in modules, you can cherry-pick the methods you'd like each class to have!
+		<p class="date">8.24.2014</p>
+		<div class="push"></div>
+	</div>
+
+	<footer>&copy; MissAndry</footer>
+</body>
+</html>

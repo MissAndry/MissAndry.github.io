@@ -99,7 +99,7 @@ p.date {
 }
 
 p em {
-	color: #388e8e;
+	color: #ff9933;
 	font-weight: 500;
 }
 
@@ -112,9 +112,9 @@ blockquote {
 
 /* Specific links */
 a {text-decoration: none;}
-p a, blockquote a { color: #cc3366;}
-p a:visited, blockquote a:visited { color: #cc3366; text-decoration: none; }
-p a:hover, blockquote a:hover { color: #ee8800; }
+p a, blockquote a { color: #ff3366;}
+p a:visited, blockquote a:visited { color: #ff3366; text-decoration: none; }
+p a:hover, blockquote a:hover { color: #ff8800; }
 
 
 ul a {color: #cc3366; text-decoration: none; }
@@ -216,7 +216,7 @@ footer, .push {
 }
 /* Extra-textual */
 .greenboldtext {
-	color: #517e01;
+	color: #ff9933;
 	font-weight: bold;
 }
 
