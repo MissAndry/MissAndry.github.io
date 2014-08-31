@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MissAndry</title>
+  <link rel="shortcut icon" href="../unit1_projects/images/rubber_duck_right.png" />
+	<link rel="stylesheet" type="text/css" href="cherry_template.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lobster' rel='stylesheet' type='text/css'>
+	<base target="_blank">
+</head>
+<body>
+	<header>
+		<h1>tech</h1>
+	
+		<nav>
+			<ul>
+				<li><a href="http://missandry.github.io" target="_self">home</a></li>
+				<li><a href="http://missandry.github.io/blog-posts/tech-archive.html" target="_self">tech blog</li>
+				<li><a href="http://missandry.github.io/blog-posts/culture-archive.html" target="_self">culture blog</li>
+				<li><a href="http://missandry.github.io/projects.html" target="_self">projects</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div id="wrapper">
+		
+		<h2>SQLInjection</h2>
+		<hr />
+		<p>
+			SQL injection is one of the most classic hacks for SQL databases. Basically, hackers take advantage of weaknesses in SQL statements to manipulate parts of the database they're not meant to see. Since a lot of online databases include at least an email address (and in many cases, more sensitive information like credit card numbers), it can have pretty serious reprecussions. 
+		</p>
+		<p>
+			This is an example of an unsecure SQL statement (from <a href="http://en.wikipedia.org/wiki/SQL_injection">Wikipedia</a>):</p>
+			<blockquote>
+				<code>
+					statement = "SELECT * FROM users WHERE name ='" + userName + "';"
+				</code>
+			</blockquote>
+			<p>It's pretty clear that the developer intended this to return all the information associated with a certain username (given by the user), but someone could insert <code>"' OR '1'='1"</code> instead of a username to make this statement:</p>
+			<blockquote>
+				<code>
+					SELECT * FROM users WHERE name='' OR '1'='1';
+				</code>
+			</blockquote>
+			<p>Since '1' is always going to equal '1' (thanks, math), the above statement will always return "true." Consequently, the malicious user will recieve the entirety of the users table. In the same type of unsecure entry field, an attacker can insert a <code>DROP TABLE</code> command, meaning that all the table information would be permanently lost.
+		</p>
+		<p>
+			Luckily, there are a few simple ways to avoid SQL injection:
+		</p>
+		<ul>
+			<li><b>Parameter binding</li>
+			<li>Pattern check</li>
+			<li>Escaping,</b> and</li>
+			<li><b>Database permissions</b></li>
+		</ul>
+		<p>
+			With <span class="greenboldtext">parameter binding</span>, a developer can minimize user input. The variable used in the statement (like <code>userName</code>, above) is modified into a placeholder that won't accept an arbitrary SQL statement. Instead, it only deals with a given, developer-controlled type of value. As a result, the malicious SQL code would be treated as incorrect input.
+		</p>
+		<p>
+			<span class="greenboldtext">Pattern check</span> is similar to parameter binding. It checks to see if the given input matches a certain type - if the input is supposed to be an integer, float, or boolean. Strings that are supposed to follow a strict pattern (like a date) can also be checked. Since the malicious code is unlikely to match the pretedermined pattern, 
+		</p>
+		<p>
+			<span class="greenboldtext">Escaping</span> refers to making the SQL statement a "string literal" - for instance, by replacing all the single quotes with two single quotes. The malicious SQL code won't fit into the string literal SQL statement, and subsequently won't be executed. Escaping is more error-prone, however, and should be used in conjunction with something like parameter binding.
+		</p>
+		<p>
+			Finally, a developer could implement <span class="greenboldtext">database permissions</span> to reduce the effects of maliciously inserted SQL statements. Database permissions can mitigate which tables are accessible by certain statements, so while a SQL Inject statement would pass, it wouldn't affect all tables in one swoop.
+		</p>
+		<p>
+			These preventative measures are best used together. No one method is going to give you perfect security against malicious coders, but at least together they can minimize the effects!
+		</p>
+		<p class="date">8.30.2014</p>
+		<div class="push"></div>
+	</div>
+
+	<footer>&copy; MissAndry</footer>
+</body>
+</html>
