@@ -10,9 +10,13 @@ body {
 nav ul li a {
 	color: #000;
 	text-decoration: none;
+	transition: all 0.3s;
+	padding: 8px 1em;
 }
 nav ul li a:visited { color: #000; }
-nav ul li a:hover { color: #b82868; }
+nav ul li a:hover { color: #f96; background-color: rgba(0,0,0, 0.25)}
+nav ul li a.first { border-top-left-radius: 20px; border-bottom-left-radius: 20px}
+nav ul li a.last { border-top-right-radius: 20px; border-bottom-right-radius: 20px}
 
 /* Header style */
 header {
@@ -42,15 +46,15 @@ header nav {
 	margin-right: 14.5%;
 	color: #000;
 	padding: 0;
-	background-color: rgba(200, 200, 200, 0.35);
-	text-shadow: 0 0 0.18em #737b7b, 0 0 0.15em #0c0c0c;
+	background-color: rgba(200, 200, 200, 0.45);
+	text-shadow: 0 0 0.1em #282828;
 	border-radius: 20px;
 }
 
 header nav ul{
 	list-style-type: none;
 	text-transform: bold;
-	padding: .5em;
+	padding: .5em 0;
 	margin: 0;
 	display: inline-block;
 	color: #000;
@@ -58,7 +62,7 @@ header nav ul{
 
 header nav li {
 	display: inline-block;
-	padding: 0 1em;
+	padding: 0;
 	color: #000;
 }
 
