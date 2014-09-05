@@ -15,8 +15,8 @@ nav ul li a {
 }
 nav ul li a:visited { color: #000; }
 nav ul li a:hover { color: #f96; background-color: rgba(0,0,0, 0.25)}
-nav ul li a.first { border-top-left-radius: 20px; border-bottom-left-radius: 20px}
-nav ul li a.last { border-top-right-radius: 20px; border-bottom-right-radius: 20px}
+nav ul li:first-child a { border-top-left-radius: 20px; border-bottom-left-radius: 20px}
+nav ul li:last-child a { border-top-right-radius: 20px; border-bottom-right-radius: 20px}
 
 /* Header style */
 header {
