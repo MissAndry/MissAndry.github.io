@@ -23,6 +23,8 @@ a:hover { color: #eee }
 img {
 	margin-left: 10%;
 	width: 80%;
+	box-shadow: 0 0 1em #888;
+	border: 1px solid #bbb;
 }
 
 /* Header */
