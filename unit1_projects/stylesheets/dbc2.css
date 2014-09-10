@@ -1,40 +1,68 @@
 body {
+	width: 100%;
 	background-color: #663300;
-	font-family: Helvetica, sans-serif;
-	color: #000000;
-	text-align: justify;
+	font-family: 'Helvetica', sans-serif;
+	color: #000;
+	margin: 0;
+
 }
 
-h1, h2, h3, h4, h5, h6 { text-align: center }
+h2, h3, h4, h5, h6 { text-align: center }
 
 p { 
 	text-align: justify; 
 	margin: 15px;
 }
 
-li { padding: 5px; }
+section img { padding: 15px; }
 
-img { padding: 15px; }
-
-#head_container {
-	 background: url(../images/Thorntonstoffee.jpg); 
-	 height: 250px; 
-	 width: 100%; 
-	 margin: 0;
-	 border: 0 0 5px 0 solid #cc9966;
+header {
+	background: url(../images/Thorntonstoffee.jpg); 
+	height: 200px; 
+	width: 100%; 
+	top: 0;
+	left: 0;
+	box-shadow: 0 0 1em #301000;
 }
 
-#menu {
-	width: 200px; 
-	height: 1275px; 
+header h1 {
+	color: #ffcc66; 
+	text-align: right; 
+	font-family: Courier, serif; 
+	font-size: 70px;
+	padding:0;	
+	margin:0 3% 0 0;
+	
+}
+
+nav {
+	width: 180px; 
+	height: 155px; 
 	background-color: #996600; 
 	float:left; 
-	color: #ffffff;
-	border-style: solid;
-	border-color: #cc9966;
+	position:fixed;
+	color: #fff;
+	border: 3px solid #cc9966;
+	border-left:none;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	text-align:center;
+	margin-top: 20px;
+	box-shadow: 0 0 1em #301000;
+
 }
 
-#content {
+nav ul {
+	text-align: left;
+	list-style-type: square;
+	padding: 0 auto;
+}
+
+nav li { padding: 1px; }
+nav ul li a, nav ul li a:visited { color: #990033; text-decoration: none; }
+nav ul li a:hover { color: #cc6633; }
+
+section {
 	float: right;
 	width: 75%;
 	background-color: #e0e0e0;
@@ -42,11 +70,13 @@ img { padding: 15px; }
 	padding: 4px;
 	margin: 20px 50px 0 0;
 	border: 3px dotted #cc9933;
+	box-shadow: 0 0 1em #301000;
 }
 
-#footer {
+footer {
 	clear: both;
 	text-align: center;
+	padding: 15px;
 }
 
 .colorfy { color: #990066; }
