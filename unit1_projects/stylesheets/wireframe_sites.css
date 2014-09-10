@@ -3,23 +3,57 @@ body {
 	font-family: Helvetica, sans-serif;
 	color: #202020;
 	text-align: justify;
+	
 }
 
-p {padding: 5px;}
+/* General text and headings */
+p {
+	padding: 5px; 
+	text-indent: 25px;
+}
+
 h1 {font-size: 50px;}
-h2, h4 {text-decoration: underline;}
-img {width: 80%;}
+h2 {text-decoration: none;}
+h4 {text-decoration: underline; text-align: center;}
 
-header {
-	width: 100%;
-	text-align: center;
+a, a:visited { color: #040404; text-decoration:none;}
+a:hover { color: #eee }
+
+/* Pictures */
+img {
+	margin-left: 10%;
+	width: 80%;
 }
 
-#menu {
+/* Header */
+header {
+	width: 105%;
+	min-height: 145px;
+	top: -40px;
+	left: -7px;
+	margin: 0;
+	position: relative;
+	text-align: center;
+	background: url(../images/Gray-Comb-Texture1.jpg);
+	box-shadow: 0 0 2em;
+}
+header h1 {
+	padding: 40px;
+	color: #ddd;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: #444;
+}
+
+/* Main content */
+nav {
 	width: 15%;
 	margin-left: 15%;
+	margin-top: -50px;
 	float: left;
 	background-color: #c0c0c0;
+	box-shadow: 0 0 3em #404040;
+	border-radius: 5px;
+	
 }
 
 section {
@@ -28,4 +62,23 @@ section {
 	float: right;
 	background-color: #e8e8e8;
 	padding: 20px;
+	box-shadow: 0 0 3em #404040;
+	margin-top: -50px;
+	border-radius: 5px;
+}
+
+/* Footer */
+footer {
+	background-color: none;
+	clear: both;
+	width: 100%;
+	height: 2em;
+	text-align: center;
+	font-size: .8em;
+	color: #fefaff;
+	padding: 0.5em;
+}
+
+footer p {
+	padding: 0.5em;
 }
