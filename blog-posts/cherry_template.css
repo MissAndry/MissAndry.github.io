@@ -14,7 +14,7 @@ nav ul li a {
 	padding: 8px 1em;
 }
 nav ul li a:visited { color: #000; }
-nav ul li a:hover { color: #f96; background-color: rgba(0,0,0, 0.25)}
+nav ul li a:hover { color: #0cc; background-color: rgba(0,0,0, 0.25)}
 nav ul li:first-child a { border-top-left-radius: 20px; border-bottom-left-radius: 20px}
 nav ul li:last-child a { border-top-right-radius: 20px; border-bottom-right-radius: 20px}
 
@@ -121,8 +121,7 @@ p a:visited, blockquote a:visited { color: #ff3366; text-decoration: none; }
 p a:hover, blockquote a:hover { color: #ff8800; }
 
 
-ul a {color: #cc3366; text-decoration: none; }
-ul a:visited {color: #cc3366;}
+ul a, ul a:visited {color: #cc3366; text-decoration: none; }
 ul a:hover {color: #ee8800;}
 ul img {max-width: 103px}
 
@@ -153,12 +152,10 @@ section:after {
 	background: #fbfafc;
 }
 
-#center-wrapper {
-	margin: auto 20%;
-}
+#center-wrapper { margin: auto 20%; }
 #center-wrapper ul { list-style-type: none; }
-#center-wrapper ul a { color: #000; }
-#center-wrapper ul a:hover { color: #cc6666; }
+#center-wrapper ul a, #center-wrapper ul a:visited { color: #000; }
+#center-wrapper ul a:hover { color: #0099cc; }
 
 /* Specific blog image */
 .blogs {
@@ -178,26 +175,6 @@ article.blogs img {
 	margin: 1em auto;
 }
 
-/* Specific projects */
-.projects {
-	background: #a8d707;
-	float: left;
-	max-height: 250px;
-	width: 27.33%;
-	margin: 2.5%;
-	padding: .5%;
-
-}
-
-.projects img {
-	width: 100%;
-	display: block;
-	margin: 1em auto;
-}
-
-article.projects img:hover {
-	background-image: #000;
-}
 
 /* Feet */
 footer, .push {
@@ -219,7 +196,7 @@ footer, .push {
 	width: 75%;
 }
 /* Extra-textual */
-.greenboldtext {
+.greenboldtext {  /* This needs to be changed to like .orangeboldtext */
 	color: #ff9933;
 	font-weight: bold;
 }
