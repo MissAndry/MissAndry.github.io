@@ -6,6 +6,12 @@ body {
 	
 }
 
+#container {
+	display: flex;
+	justify-content: space-between;
+	margin-top: -50px;
+}
+
 /* General text and headings */
 p {
 	padding: 5px; 
@@ -16,8 +22,12 @@ h1 {font-size: 50px;}
 h2 {text-decoration: none;}
 h4 {text-decoration: underline; text-align: center;}
 
-a, a:visited { color: #040404; text-decoration:none;}
-a:hover { color: #eee }
+figcaption {
+	text-align: center;
+	padding-bottom: 20px;
+	padding-top: 10px;
+	font-size: 0.85em;
+}
 
 /* Pictures */
 img {
@@ -49,14 +59,16 @@ header h1 {
 /* Main content */
 nav {
 	width: 15%;
-	margin-left: 15%;
-	margin-top: -50px;
+ 	margin-left: 15%;
 	float: left;
 	background-color: #c0c0c0;
 	box-shadow: 0 0 3em #404040;
 	border-radius: 5px;
+	max-height: 160px;
 	
 }
+nav a, nav a:visited { color: #040404; text-decoration:none;}
+nav a:hover { color: #e9e9e9 }
 
 section {
 	width: 50%;
@@ -65,7 +77,6 @@ section {
 	background-color: #e8e8e8;
 	padding: 20px;
 	box-shadow: 0 0 3em #404040;
-	margin-top: -50px;
 	border-radius: 5px;
 }
 
@@ -83,4 +94,15 @@ footer {
 
 footer p {
 	padding: 0.5em;
+}
+
+@media screen and (max-width: 1000px){
+	header {width: 1000px; }
+	footer{width: 100%; height: 2em; padding: 0.5em;}
+	#container {
+		display: flex;
+		justify-content: space-between;
+		width: 970px;
+		margin: -50px 0 0 0;
+	}
 }
