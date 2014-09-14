@@ -4,18 +4,54 @@
 	<title>MissAndry</title>
 	<link rel="shortcut icon" href="../unit1_projects/images/rubber_duck_right.png" />
 	<link rel="stylesheet" type="text/css" href="cherry_template.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/cherry_template_dropdown.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lobster' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/cherry_menus.js"></script>
 </head>
 <body>
 	<header>
 		<h1>tech</h1>
 	
 		<nav>
-			<ul>
+			<ul class="dropdown">
 				<li><a href="http://missandry.github.io" target="_self">home</a></li>
-				<li><a href="http://missandry.github.io/blog-posts/tech-archive.html" target="_self">tech blog</a></li>
-				<li><a href="http://missandry.github.io/blog-posts/culture-archive.html" target="_self">culture blog</a></li>
-				<li><a href="http://missandry.github.io/projects.html" target="_self">projects</a></li>
+				<li><a href="#">tech blog</a>
+					<ul>
+						<li><a href="week8_technical.html">Recursion</a></li>
+						<li><a href="week7_technical.html">SQLInjection</a></li>
+						<li><a href="week6_technical.html">Ruby: Class vs. Module</a></li>
+						<li><a href="week5_technical.html">Getting Classy</a></li>
+						<li><a href="week4_technical.html">Combination Station</a></li>
+						<li><a href="week3_technical.html">Javascript: Hot or Not?</a></li>
+						<li><a href="week2_technical.html">HTML: Class vs. ID</a></li>
+						<li><a href="week1_technical.html">Favored Websites</a></li>
+						<li><a href="tech-archive.html">All posts</a></li>
+					</ul>
+				</li>
+				<li><a href="#">culture blog</a>
+					<ul>
+						<li><a href="week8_cultural.html">Emotional Conflict</a></li>
+						<li><a href="week7_cultural.html">Accomplished Relations</a></li>
+						<li><a href="week6_cultural.html">Stereotype Threat</a></li>
+						<li><a href="week5_cultural.html">Pairing && Feedback</a></li>
+						<li><a href="week4_cultural.html">Bleeding Hearts</a></li>
+						<li><a href="week3_cultural.html">Concrete Minds</a></li>
+						<li><a href="week1_cultural.html">Kitchenette</a></li>
+						<li><a href="culture-archive.html">All posts</a></li>
+					</ul>
+				</li>
+				<li><a href="#">projects</a>
+					<ul>
+						<li><a href="http://missandry.github.io/unit1_projects/dbc1.html">First Project</a></li>
+						<li><a href="http://missandry.github.io/unit1_projects/dbc2.html">Second Project</a></li>
+						<li><a href="http://missandry.github.io/peer-pairing/session1/gps1.1.html">GPS 1.1</a></li>
+						<li><a href="http://missandry.github.io/unit1_projects/wireframe_sites.html">Wireframing Sites</a></li>
+						<li><a href="http://missandry.github.io/unit1_projects/my_wireframe.html">Blog Layout wireframe</a></li>
+						<li><a href="http://missandry.github.io/projects.html">All projects</a></li>
+					</ul>
+				</li>
 			</ul>
 		</nav>
 	</header>
@@ -42,5 +78,6 @@
 	<footer>
 		&copy; MissAndry
 	</footer>
+
 </body>
 </html>
