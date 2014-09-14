@@ -4,7 +4,12 @@
 	<title>MissAndry</title>
     <link rel="shortcut icon" href="../unit1_projects/images/rubber_duck_right.png" />
 	<link rel="stylesheet" type="text/css" href="cherry_template.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/snippet.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lobster' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.snippet.js"></script>
+	<script type="text/javascript" src="jquery/jquery.code_format.js"></script>
 	
 </head>
 <body>
@@ -29,7 +34,25 @@
 		<p>
 			Basically, a class is something you are going to use <span class="greenboldtext">over and over again</span> and an ID is something you are only going to use <span class="greenboldtext">once</span>. In other words, you give a tag a specific ID when you want to single it out and a class when you want to create faceless masses. 
 		</p>
-		<img src="../unit1_projects/images/html-class-vs-id-use.png" />
+		<pre class="html">
+
+&lt;div id="sidebar">
+	It's lkely that you'll only have one sidebar. If you have more than one, you 
+	could name them something like "blogNavSidebar" and "generalNavSidebar" so 
+	they remain unique, then call on a class for styling.
+&lt;/div>
+&lt;p class="pretty">
+	This will prettify the paragraph with font styles and backgrounds, but you 
+	probably won't need to specifically find this paragraph. You'll also 
+	probably want to use this style again.
+&lt;/p>
+&lt;p>
+	This paragraph will be pretty boring.
+&lt;/p>
+&lt;p class="pretty">
+	See, I knew you wanted pretty paragraphs again!
+&lt;/p></pre>
+
 		<p>
 			We can think of classes like an apartment layout and IDs like an apartment number. The same layout for apartments is likely to be used over and over again, but apartment numbers have to be unique. You wouldn't, for example, be able to find a single apartment by searching through layouts, but a number makes it a lot more simple. Other things that are unique to each apartment or apartment building would have an ID number without necessarily having a class.   
 		</p>

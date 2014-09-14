@@ -2,10 +2,15 @@
 <html>
 <head>
 	<title>MissAndry</title>
-  <link rel="shortcut icon" href="../unit1_projects/images/rubber_duck_right.png" />
 	<link rel="stylesheet" type="text/css" href="cherry_template.css">
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lobster' rel='stylesheet' type='text/css'>
-	<base target="_blank">
+	<link rel="stylesheet" type="text/css" href="stylesheets/snippet.css">
+    <link rel="shortcut icon" href="../unit1_projects/images/rubber_duck_right.png" />
+	
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lobster' rel='stylesheet' type='text/css' />
+    <base target="_blank">
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.snippet.js"></script>
+	<script type="text/javascript" src="jquery/jquery.code_format.js"></script>
 </head>
 <body>
 	<header>
@@ -30,53 +35,43 @@
 		</p>
 		<p>
 			A very common example uses factorials. Since the factorial of a number n is the product of all numbers less than or equal to n, it provides a perfect example:</p>
-			<blockquote>
-				<code>
-					<b>def</b> factorial(num)<br>
-  					&nbsp;<b>if</b> num != 0 && num <= 1<br>
-    				&nbsp;&nbsp;1<br>
-  					&nbsp;<b>else</b><br>
-    				&nbsp;&nbsp;num * factorial(num - 1)<br>
-  					&nbsp;end<br>
-					end
-				</code>
-			</blockquote>
-			<p>Within the if/else loop, the method <code>factorial</code> calls itself.
+<pre class="ruby">
+def factorial(num)
+  	if num != 0 && num &lt;= 1
+		1
+  	else
+    	num * factorial(num - 1)
+  	end
+end</pre>
+		<p>
+			Within the if/else loop, the method <code>factorial</code> calls itself.
 		</p>
 		<p>
 			This might look completely bonkers at first. <code>factorial</code> isn't even finished being written when it's called, so how can it call upon itself?
 		</p>
 		<p>
 			If you notice, in the if statement there is a condition where <code>num</code> is less than or equal to <code>1</code>. If that's the case, the outer method <code>factorial</code> returns <code>1</code>. When <code>num</code> is greater than <code>1</code>, <code>factorial</code> calls itself. Let's take a look at how that would be implemented. If we want to find the factorial of 3 with this method, we would call this:</p>
-			<blockquote>
-				<code>
-					factorial(3)&nbsp;&nbsp;<i># => should return '6'</i>
-				</code>
-			</blockquote>
-			<p>Once this gets to the if/else loop, it will multiply 3 by <code>factorial(2)</code>, and within <code>factorial(2)</code>, it will find <code>factorial(1)</code>. Here's where the magic happens.
+<pre class="ruby">
+factorial(3)   # => should return '6'</pre>
+		<p>
+			Once this gets to the if/else loop, it will multiply 3 by <code>factorial(2)</code>, and within <code>factorial(2)</code>, it will find <code>factorial(1)</code>. Here's where the magic happens.
 		</p>
 		<p>
 			If we were write the long form of the the <code>else</code> statement above for <code>factorial(3)</code>, it would end up looking something like this:
 		</p>
-			<blockquote>
-				<code>
-					3 * factorial(2) * factorial(1)&nbsp;&nbsp;<i># => factorial(2) will call factorial(1) in its else statement</i>
-				</code>
-			</blockquote>
+<pre class="ruby">
+3 * factorial(2) * factorial(1)
+# => factorial(2) will call factorial(1) in its else statement</pre>
 		<p>
-			The only one of these calls which immediately returns something is <code>factorial(1)</code>. From there, the <code>factorial</code> method can build itself from the ground up. The else statement within <code>factorial(2)</code> unpacks to return:</p>
-			<blockquote>
-				<code>
-					2 * 1&nbsp;&nbsp;<i># => Remember the code above! We want to retun num * factorial(num - 1)</i>
-				</code>
-			</blockquote><p>
+			The only one of these calls which immediately returns something is <code>factorial(1)</code>. From there, the <code>factorial</code> method can build itself from the ground up. The else statement within <code>factorial(2)</code> unpacks to return:
+		</p>
+<pre class="ruby">
+2 * 1  # => Remember the code above! We want to retun num * factorial(num - 1)</pre>
+		<p>
 			Now that <code>factorial(2)</code> is returning something, <code>factorial(3)</code> should work no problem. The else statement becomes:
-			<blockquote>
-				<code>
-					3 * 2
-				</code>
-			</blockquote>
-			<p>Which, of course, will return <code>6</code>.
+<pre class="ruby">3 * 2</pre>
+		<p>
+			Which, of course, will return <code>6</code>.
 		</p>
 		<hr />
 		<p><i>Factorial example modified from Chris Pine's Learn to Program</i></p>

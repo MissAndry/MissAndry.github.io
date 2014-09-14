@@ -2,10 +2,15 @@
 <html>
 <head>
 	<title>MissAndry</title>
-    <link rel="shortcut icon" href="../unit1_projects/images/rubber_duck_right.png" />
 	<link rel="stylesheet" type="text/css" href="cherry_template.css">
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lobster' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="stylesheets/snippet.css">
+    <link rel="shortcut icon" href="../unit1_projects/images/rubber_duck_right.png" />
 	
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lobster' rel='stylesheet' type='text/css' />
+    <base target="_blank">
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.snippet.js"></script>
+	<script type="text/javascript" src="jquery/jquery.code_format.js"></script>
 </head>
 <body>
 	<header>
@@ -24,26 +29,64 @@
 		<h2>Combination Station</h2>
 		<hr />
 		<p>
-			<b>Array#combination</b> takes one argument (the number of things you'd like to combine at a time) and returns an Enumerator. <br>
-			<img src="../unit1_projects/images/week-4/naked%20combination.png" />
-			You can call conversions on an Enumerator. The most common of these is #to_a. That will give you an array containing arrays of the length specified by the argument. <br>
-			<img src="../unit1_projects/images/week-4/combination%20with%20to_a.png" />
-			Like pretty much everything in Ruby, you can save #combination's returned Enumerator into a variable, then call an array conversion on that variable. (You could also save a.combination(2).to_a into a variable, because Ruby doesn't discriminate.)<br>
-			<img src="../unit1_projects/images/week-4/combination in a variable.png" />
+			<b>Array#combination</b> takes one argument (the number of things you'd like to combine at a time) and returns an Enumerator. </p>
+<pre class="ruby">
+a = [1, 2, 3]
+=> [1, 2, 3]
+
+a.combination(2)
+=> #&lt;Enumerator: [1, 2, 3]:combination(2)></pre>
+		<p>
+			You can call conversions on an Enumerator. The most common of these is #to_a. That will give you an array containing arrays of the length specified by the argument.
+		</p>
+<pre class="ruby">
+a.combination(2).to_a
+=> [[1, 2], [1, 3], [2, 3]]</pre>
+		<p>
+			Like pretty much everything in Ruby, you can save #combination's returned Enumerator into a variable, then call an array conversion on that variable. (You could also save a.combination(2).to_a into a variable, because Ruby doesn't discriminate.)
+		</p>
+<pre class="ruby">
+b = a.combination(2)
+=> #&lt;Enumerator: [1, 2, 3]:combination(2)>
+
+b.to_a
+[[1, 2], [1, 3], [2, 3]]</pre>
+		<p>
 			If you pass an argument to #combination that is higher than the array's length, it will return an empty array (once #to_a is called) because there are no combinations of that length. Likewise, if you pass an argument of 0, it will return an array housing an empty array. 
-			<img src="../unit1_projects/images/week-4/too many combinations.png" />
-			<img src="../unit1_projects/images/week-4/no combinations.png" />
+		</p>
+<pre class="ruby">
+a.combination(4).to_a
+=> []
+
+a.combination(0).to_a
+=> [[]]</pre>
+		<p>
 			#combination.to_a might be most useful when you need to create unique groups, like in the accountability group creator challenge this week.
 		</p>
 		<p>
-			<b>Array#combination</b>'s sister is <b>Array#permutation</b>. #permutation, like #combination, returns an Enumerator when called without a converter, and an array of permutated arrays when called with #to_a. <br>
-			<img src="../unit1_projects/images/week-4/permutation to_a.png" />
+			<b>Array#combination</b>'s sister is <b>Array#permutation</b>. #permutation, like #combination, returns an Enumerator when called without a converter, and an array of permutated arrays when called with #to_a. 
+		</p>
+<pre class="ruby">
+a = [1, 2, 3]
+
+a.permutation(2)
+=> #&lt;Enumerator: [1, 2, 3]:permutation(2)>
+
+a.permutation(2).to_a
+=> [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]</pre>
+		<p>
 			The biggest difference between #combination and #permutation is #permutation doesn't ignore matching pairs.As you can see, #permutation here returns twice the number of arrays as #combination. Some of the arrays have matching values. #combination would treat [1,2] and [2,1] as redundant, but #permutation doesn't hate that hard. It finds uniqueness in the value positon rather than the actual value. 
 		</p>
 		<p>
-			When faced with arguments higher than the array's length or equaling zero, #permutation reacts exactly the same way as #combination. <br>
-			<img src="../unit1_projects/images/week-4/too many permutations.png" />
-			<img src="../unit1_projects/images/week-4/no permutations.png" />
+			When faced with arguments higher than the array's length or equaling zero, #permutation reacts exactly the same way as #combination.
+		</p>
+<pre class="ruby">
+a.permutation(4).to_a
+=> []
+
+a.permutation(0).to_a
+=> [[]]</pre>
+		<p>
 			Those both contain no elements because:
 		</p>
 		<ol>
@@ -54,8 +97,15 @@
 			#permutation.to_a is most useful when you need to prioritize element position over the element's existence.
 		</p>
 		<p>
-			You can also call #to_h, creating a hash.<br>
-			<img src="../unit1_projects/images/week-4/combine and permeate hashes.png" />
+			You can also call #to_h, creating a hash.
+		</p>
+		<pre class="ruby">
+a.permutation(2).to_h
+=> {1=>3, 2=>3, 3=>2}
+
+a.combination(2).to_h
+=> {1=>3, 2=>3}</pre>
+		<p>
 			#combination and #permutation are less useful when converting to a hash. They can only be called with an argument of 2 and return less combinations and permutations than the array. There may be some good uses for a hash created this way, but they escape me!
 		</p>
 		<p>
@@ -65,5 +115,26 @@
 	</div>
 
 	<footer>&copy; MissAndry</footer>
+
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.snippet.js"></script>
+	<script type="text/javascript" src="jquery/jquery.code_format.js"></script>
+
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.snippet.js"></script>
+	<script type="text/javascript" src="jquery/jquery.code_format.js"></script>
+
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.snippet.js"></script>
+	<script type="text/javascript" src="jquery/jquery.code_format.js"></script>
+
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.snippet.js"></script>
+	<script type="text/javascript" src="jquery/jquery.code_format.js"></script>
+
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.snippet.js"></script>
+	<script type="text/javascript" src="jquery/jquery.code_format.js"></script>
+
 </body>
 </html>

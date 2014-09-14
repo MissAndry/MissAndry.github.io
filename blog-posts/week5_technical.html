@@ -2,10 +2,14 @@
 <html>
 <head>
 	<title>MissAndry</title>
-	<link rel="shortcut icon" href="../unit1_projects/images/rubber_duck_right.png" />
+    <link rel="shortcut icon" href="../unit1_projects/images/rubber_duck_right.png" />
 	<link rel="stylesheet" type="text/css" href="cherry_template.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/snippet.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lobster' rel='stylesheet' type='text/css'>
-	
+
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.snippet.js"></script>
+	<script type="text/javascript" src="jquery/jquery.code_format.js"></script>
 </head>
 <body>
 	<header>
@@ -27,12 +31,30 @@
 		<p>
 			Well before anyone gets into writing Ruby classes, they learn how to call methods on a class. An array, for example, has access to all manner of built-in methods. These methods work for any array, any time. That's because any new array is technically a new <em>instance</em> of the <em>Array class</em>.  
 		</p> 
-		<img src="../unit1_projects/images/week-5/new_array.png" />
+<pre class="ruby">
+a = Array.new
+a  # => []</pre>
 		<p>
 			From here, you can call different methods on the array like #push and #sort. Those are methods built-in to the Array class and will work on any array.
 		</p>
-		<img src="../unit1_projects/images/week-5/array_methods.png" />
-		<img src="../unit1_projects/images/week-5/more_array_methods.png" />
+<pre class="ruby">
+a.push(5)
+a.push(3)
+a.push(8)
+a  # => [5, 3, 8]
+
+a.sort  # => [3, 5, 8]
+
+b = Array.new
+b  # => []
+
+b.push("is this")
+b.push("the real life")
+b.push("is this")
+b.push("just fantasy")
+b  # => ["is this", "the real life", "is this", "just fantasy"]
+
+b.sort  # => ["is this", "is this", "just fantasy", "the real life"]</pre>
 		<p>
 			While creating instances of built-in classes is super cool, it can get really boring to call the same three classes all the time. Luckily, Ruby is dynamic enough to allow a user to write new classes with its own methods. 
 		</p>
@@ -42,19 +64,61 @@
 		<p>
 			For example, if you wanted to create a virtual dinosaur (and I don't mean an obsolete OS), you could start off like this:
 		</p>
-		<img src="../unit1_projects/images/week-5/initialize_dino.png" />
+<pre class="ruby">
+class Dino
+	def initialize(name, talons)
+		@name = name
+		@talons = talons
+	end
+end</pre>
 		<p>
 			The first line - class Dino - tells Ruby that you want to create a class called Dino. The first method you'll want to write in any class is the <em>initialize</em> method. Anything you write in here will load as soon as you call a new instance of the class, and any arguments you give to initialize can be arguments you pass to a new instance of the class.
 		</p>
-		<img src="../unit1_projects/images/week-5/reptar.png" />
 		<p>
 			After initialize, you can write any methods you want class instances to be able to perform. If you want your dinosaurs to roar, you can include a roar method. Likewise, if you want to print your chances of winning a fight against a dinosaur, you can include that method as well. 
 		</p>
-		<img src="../unit1_projects/images/week-5/roar_talons.png" />
+<pre class="ruby">
+class Dino
+	def initialize(name, talons)
+		@name = name
+		@talons = talons
+	end
+
+	def roar
+		puts "RAWRRR"
+	end
+
+	def talon_count
+		puts "#{@name} has #{@talons} talons."
+		if @talons > 8
+			puts "That's a lot of talons!"
+		else
+			puts "That's not so many talons. You could definitely win this fight."
+		end
+	end
+end</pre>
 		<p>
 			The @ sign in front of the variable names in initialize and talon_count signal to Ruby that you want that variable to be accessible by all methods within the class. That way, you don't have to keep passing the same arguments to the class methods. talon_count accepts no arguments but still handles the instance variables flawlessly.
 		</p>
-		<img src="../unit1_projects/images/week-5/new_dinos.png" />
+<pre class="ruby">
+reptar = Dino.new("Reptar", 90)
+
+reptar.roar
+# => "RAWRRR"
+
+reptar.talon_count
+# => "Reptar has 90 talons."
+# => "That's a lot of talons!"
+
+
+littlefoot = Dino.new("Little Foot", 0)
+
+littlefoot.roar
+# => "RAWRRR"
+
+littlefoot.talon_count
+# => "Little Foot has 0 talons."
+# => "That's not so many talons. You could definitely win this fight."</pre>
 		<p>
 			Now you can build a whole menagerie of basic dinosaurs that all roar and all have some amount of talons, and you only have to write the roar and talon_count functions once!
 		</p>
@@ -63,5 +127,22 @@
 	</div>
 
 	<footer>&copy; MissAndry</footer>
+
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.snippet.js"></script>
+	<script type="text/javascript" src="jquery/jquery.code_format.js"></script>
+	
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.snippet.js"></script>
+	<script type="text/javascript" src="jquery/jquery.code_format.js"></script>
+	
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.snippet.js"></script>
+	<script type="text/javascript" src="jquery/jquery.code_format.js"></script>
+	
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.snippet.js"></script>
+	<script type="text/javascript" src="jquery/jquery.code_format.js"></script>
+
 </body>
 </html>
