@@ -59,8 +59,8 @@ nav ul {
 }
 
 nav li { padding: 1px; }
-nav ul li a, nav ul li a:visited { color: #990033; text-decoration: none; }
-nav ul li a:hover { color: #cc6633; }
+nav ul a, nav ul a:visited { color: #720026; text-decoration: none; }
+nav ul a:hover { color: #cc6633; }
 
 section {
 	float: right;
