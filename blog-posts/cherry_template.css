@@ -1,7 +1,7 @@
 body {
 	width: 100%;
 	background-color: #eeecea;
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Cabin', sans-serif;
 	margin: 0;
 	text-align: left;
 }
@@ -85,6 +85,7 @@ h2, h3 {
 	padding: .75em;
 	padding-bottom: 0;
 	margin-bottom: 0;
+	font-family: 'Roboto Slab', serif;
 }
 
 h2.picture { padding-top: 120px;}
@@ -96,6 +97,7 @@ p {
 	display: block;
 	text-align: left;
 	clear: both;
+	font-family: 'Cabin', sans-serif;
 }
 
 p.date {
